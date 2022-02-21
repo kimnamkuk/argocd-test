@@ -4,11 +4,11 @@
 
 ## Provide a name in place of kube-prometheus-stack for `app:` labels
 ##
-nameOverride: ""
+nameOverride: "prod"
 
 ## Override the deployment namespace
 ##
-namespaceOverride: "prometheus"
+namespaceOverride: "prometheus-prod"
 
 ## Provide a k8s version to auto dashboard import script example: kubeTargetVersionOverride: 1.16.6
 ##
