@@ -4,22 +4,19 @@ metadata:
   creationTimestamp: null
   labels:
     app: rollout-bluegreen
-    app: nginx-blue
-  name: nginx-blue
+  name: nginx-bluegreen
   namespace: nkkim
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: rollout-bluegreen
-      app: nginx-blue
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
         app: rollout-bluegreen
-        app: nginx-blue
     spec:
       containers:
       - image: nginx:1.18
