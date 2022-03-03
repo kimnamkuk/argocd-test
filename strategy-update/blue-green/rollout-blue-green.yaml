@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: rollout-bluegreen
+  namespace: nkkim
 spec:
   replicas: 1 
   revisionHistoryLimit: 2
