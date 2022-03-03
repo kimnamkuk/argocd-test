@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
+    app: rollout-bluegreen
     app: nginx-green
   name: nginx-green
   namespace: nkkim
@@ -10,16 +11,18 @@ spec:
   replicas: 3
   selector:
     matchLabels:
+      app: rollout-bluegreen
       app: nginx-green
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
+        app: rollout-bluegreen
         app: nginx-green
     spec:
       containers:
-      - image: nginx
+      - image: nginx:1.19
         name: nginx
         resources: {}
 status: {}

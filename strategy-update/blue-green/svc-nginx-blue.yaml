@@ -3,6 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
+    app: rollout-bluegreen
     app: nginx-blue
   name: nginx-blue
   namespace: nkkim
@@ -12,6 +13,7 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
+    app: rollout-bluegreen
     app: nginx-blue
 status:
   loadBalancer: {}
