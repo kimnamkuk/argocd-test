@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-blue
+  name: nginx-blue
+  namespace: nkkim
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-blue
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-blue
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
