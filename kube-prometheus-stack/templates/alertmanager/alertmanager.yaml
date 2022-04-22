@@ -6,7 +6,7 @@ metadata:
   namespace: {{ template "kube-prometheus-stack.namespace" . }}
   labels:
     app: test
-    app: {{ template "kube-prometheus-stack.test" . }}-alertmanager
+    app: {{ template "kube-prometheus-stack.name" . }}-alertmanager
 {{ include "kube-prometheus-stack.labels" . | indent 4 }}
 {{- if .Values.alertmanager.annotations }}
   annotations:
