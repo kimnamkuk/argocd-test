@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+data:
+  start.sh: |  
+              #!/bin/bash
+
+              for (( ; ; ))
+              do
+
+                      echo 1
+                      sleep 10
+              done
