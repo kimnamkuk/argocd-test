@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ template "redis-ha.fullname" . }}-cronjob
+  namespace: {{ .Release.Namespace | quote }}
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: centos
+            image: nkkim/centos-test
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - /start.sh
+            volumeMounts:
+            - name: cm
+              mountPath: /start.sh
+              subPath: start.sh
+          volumes:
+            - name: cm
+              configMap:
+                name: {{ template "redis-ha.fullname" . }}-configmap
+                items:
+                  - key: start.sh
+                    path: start.sh
+                    mode: 0777    
+          restartPolicy: OnFailure

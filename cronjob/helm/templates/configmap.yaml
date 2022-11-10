@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "redis-ha.fullname" . }}-configmap
+  namespace: {{ .Release.Namespace | quote }}
+data:
+  start.sh: |  
+{{- include "start.sh" .}}
+            
