@@ -24,5 +24,9 @@ spec:
           volumes:
             - name: cm
               configMap:
-                name: configmap    
+                name: configmap
+                items:
+                  - key: start.sh
+                    path: start.sh
+                    mode: 0777    
           restartPolicy: OnFailure
