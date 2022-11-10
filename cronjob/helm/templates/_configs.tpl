@@ -1,8 +1,6 @@
-{{/* vim: set filetype=mustache: */}}
-
-{{- define "start.sh}}
-{{- if .Values.start.sh}}
-{{ tpl .Values.start.sh . | indent 4}}
+{{- define "start.sh"}}
+{{- if .Values.start}}
+{{ tpl .Values.start . | indent 4}}
 {{- else  }}
     #!/bin/bash
     echo 1
