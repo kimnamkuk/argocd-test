@@ -2,13 +2,11 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: configmap
+  nameespace: default
 data:
   start.sh: |  
               #!/bin/bash
-
-              for (( ; ; ))
-              do
-
-                      echo 1
-                      sleep 10
-              done
+                echo 1
+                sleep 10
+                echo 2
+            
