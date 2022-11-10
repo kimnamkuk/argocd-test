@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: cronjob-test
+  nameespace: default
 spec:
   schedule: "*/5 * * * *"
   jobTemplate:
